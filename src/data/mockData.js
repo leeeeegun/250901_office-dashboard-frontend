@@ -1,14 +1,10 @@
 export const userInfo = {
     name: "이의건",
     team: "개발팀",
-    avatarUrl: "https://placehold.co//80x80/E2e8F0/4A5568?text=K",
+    avatarUrl: "https://placehold.co/80x80/a7f3d0/1e293b?text=K",
     todayMailCount: 13,
     todayScheduleCount: 4,
-    communityNewPostCount: 0,
-    todoCount: 0,
-    approvalPendingCount: 2,
 };
-
 export const boardItems = [
     {
         id: 1,

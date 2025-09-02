@@ -27,7 +27,7 @@ const AttendanceCard = () => {
                     <p className="text-2xl font-bold text-gray-300">-</p>
                 </div>
             </div>
-            <div classNmae="mb-4">
+            <div className="mb-4">
                 <p className="text-sm mb-2">주간누적 <span className="font-bold text-cyan-500">33시간 00분</span> / 이번 주 10시간이 더 필요해요! </p>
                 <div className="w-full bg-gray-200 rounded-full">
                     <div className="bg-cyan-400 h-2.5 rounded-full" style={{ width: "52%" }}></div>
