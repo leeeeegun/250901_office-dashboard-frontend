@@ -23,6 +23,7 @@ const BoardCard = () => (
             ))}
         </ul>
     </div>
-)
+);
 
 export default BoardCard;
+
