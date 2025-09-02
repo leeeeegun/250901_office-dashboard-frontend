@@ -1,4 +1,4 @@
-const userInfo = {
+export const userInfo = {
     name: "이의건",
     team: "개발팀",
     avatarUrl: "https://placehold.co//80x80/E2e8F0/4A5568?text=K",
@@ -9,7 +9,7 @@ const userInfo = {
     approvalPendingCount: 2,
 };
 
-const boardItems = [
+export const boardItems = [
     {
         id: 1,
         category: "공지사항",
