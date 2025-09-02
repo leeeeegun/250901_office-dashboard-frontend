@@ -41,3 +41,5 @@ const AttendanceCard = () => {
         </div>
     )
 };
+
+export default AttendanceCard;
