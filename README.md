@@ -1,15 +1,5 @@
-<div align="center">
-
 🏢 오피스 대시보드 (Office Dashboard)
-React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관리 대시보드 프론트엔드 프로젝트
-
-</div>
-
-<p align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/React-61DAFB%3Fstyle%3Dfor-the-badge%26logo%3Dreact%26logoColor%3Dblack" alt="React"/>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Vite-646CFF%3Fstyle%3Dfor-the-badge%26logo%3Dvite%26logoColor%3Dwhite" alt="Vite"/>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Tailwind_CSS-38B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css%26logoColor%3Dwhite" alt="Tailwind CSS"/>
-</p>
+React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관리 대시보드 프론트엔드 프로젝트입니다.
 
 🖼️ 미리보기
 ✨ 프로젝트 소개
@@ -17,14 +7,23 @@ React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관
 
 🚀 주요 기능
 📊 대시보드 (Dashboard): 로그인 후 가장 먼저 보게 될 메인 페이지로, 프로필 정보, 출퇴근 현황, 최신 게시글 등 주요 정보들을 한눈에 파악할 수 있습니다.
+
 ✍️ 전자결재 (ApprovalPage): 휴가 신청, 비용 처리 등 각종 결재 문서를 상신하고 처리 현황을 확인할 수 있습니다.
+
 📋 게시판 (BoardPage): 공지사항, 자유게시판 등 사내 소통을 위한 공간입니다.
+
 🗓️ 예약 (BookingPage): 회의실, 법인 차량 등 공용 물품이나 시설을 예약하고 관리할 수 있습니다.
+
 📅 캘린더 (CalendarPage): 전사 주요 일정 및 개인 일정을 등록하고 공유할 수 있습니다.
+
 👥 주소록 (ContactsPage): 임직원의 연락처 정보를 쉽게 찾아볼 수 있습니다.
+
 📧 메일 (MailPage): 사내 메일 시스템과 연동하여 메일을 확인하고 보낼 수 있습니다.
+
 📝 설문조사 (SurveyPage): 다양한 주제로 설문조사를 생성하고 참여할 수 있습니다.
+
 🍱 점심 메뉴 추천 (LunchPage): 점심 메뉴를 고민하는 직원들을 위한 랜덤 추천 기능입니다.
+
 ✨ 오늘의 운세 (FortunePage): 재미로 보는 오늘의 운세 기능입니다.
 
 🛠️ 기술 스택
