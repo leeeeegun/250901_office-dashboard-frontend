@@ -1,54 +1,63 @@
-🏢 HUB 오피스 - 대시보드 프론트엔드
+# 🏢 HUB 오피스 - 대시보드 프론트엔드
+
 React와 Tailwind CSS를 사용하여 제작된 모던한 오피스 대시보드 UI 프로토타입입니다.
 
-😎 소개
-<table>
-  <tr>
-    <td align="center"><b><a href="https://github.com/leeeeegun">이의건</a></b></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/leeeeegun"><img src="https://www.google.com/search?q=https://avatars.githubusercontent.com/u/80462203%3Fv%3D4" width="100px" /></a></td>
-  </tr>
-</table>
+<br/>
 
-🚀 프로젝트 개요
+## 💫 대시보드 미리보기
+
+![HUB Office Dashboard](https://i.imgur.com/gK6Z8dD.png)
+
+<br/>
+
+## 😎 소개
+
 HUB 오피스 대시보드는 사내 구성원들의 업무 효율성을 높이기 위한 다양한 기능을 통합 제공하는 것을 목표로 하는 웹 애플리케이션의 프론트엔드 파트입니다. 깔끔하고 직관적인 UI를 통해 사용자가 쉽게 정보에 접근하고 업무를 처리할 수 있도록 설계되었습니다.
 
-주요 기능
-🖥️ 메인 대시보드: 개인 프로필, 근태 현황, 최신 게시글 등 핵심 정보를 한눈에 파악할 수 있습니다.
+### 주요 기능
 
-👤 프로필 카드: 사용자의 기본 정보와 오늘 남은 업무(메일, 일정, 결재) 수를 요약하여 보여줍니다.
+-   🖥️ **메인 대시보드**: 개인 프로필, 근태 현황, 최신 게시글 등 핵심 정보를 한눈에 파악할 수 있습니다.
+-   👤 **프로필 카드**: 사용자의 기본 정보와 오늘 남은 업무(메일, 일정, 결재) 수를 요약하여 보여줍니다.
+-   🕒 **실시간 근태 카드**: 현재 시간과 출퇴근 시간, 주간 누적 근무 시간을 시각적으로 제공합니다.
+-   📰 **게시판 카드**: 사내 공지사항이나 설문조사 등 최신 게시물을 썸네일과 함께 보여줍니다.
+-   🧭 **사이드바 네비게이션**: 아이콘 기반의 메뉴를 통해 메일, 주소록, 캘린더 등 다양한 페이지로 쉽게 이동할 수 있습니다.
 
-🕒 실시간 근태 카드: 현재 시간과 출퇴근 시간, 주간 누적 근무 시간을 시각적으로 제공합니다.
+<br/>
 
-📰 게시판 카드: 사내 공지사항이나 설문조사 등 최신 게시물을 썸네일과 함께 보여줍니다.
+## 🛠️ 기술 스택
 
-🧭 사이드바 네비게이션: 아이콘 기반의 메뉴를 통해 메일, 주소록, 캘린더 등 다양한 페이지로 쉽게 이동할 수 있습니다.
+| Category      | Technology                                    |
+| :------------ | :-------------------------------------------- |
+| **Framework** | `React 18`                                    |
+| **Styling** | `Tailwind CSS`, `PostCSS`, `Autoprefixer`     |
+| **Build Tool**| `Vite`                                        |
+| **Linter** | `ESLint`                                      |
 
+<br/>
 
-🛠️ 기술 스택
-Framework: React 18
+## 📦 설치 및 실행
 
-Styling: Tailwind CSS, PostCSS, Autoprefixer
+### 사전 요구사항
 
-Build Tool: Vite
+-   Node.js (v16 이상)
+-   npm
 
-Linter: ESLint
+### Frontend 실행 방법
 
-📦 설치 및 실행
-사전 요구사항
-Node.js 16+
+```bash
+# 1. 프로젝트를 클론합니다.
+git clone [https://github.com/your-username/office-dashboard-frontend.git](https://github.com/your-username/office-dashboard-frontend.git)
 
-npm
+# 2. 프로젝트 디렉토리로 이동합니다.
+cd office-dashboard-frontend
 
-Frontend 실행
-# 의존성 설치
+# 3. 필요한 의존성을 설치합니다.
 npm install
 
-# 개발 서버 실행
+# 4. 개발 서버를 실행합니다.
 npm run dev
 
-개발 서버가 http://localhost:5173에서 실행됩니다.
+<br/>
 
 🏗️ 프로젝트 구조
 office-dashboard-frontend/
