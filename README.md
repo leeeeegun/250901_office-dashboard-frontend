@@ -64,7 +64,7 @@ office-dashboard-frontend/
 
 <br/>
 
-### Frontend 실행 방법
+## ▶︎ Frontend 실행 방법
 
 ```bash
 # 1. 프로젝트를 클론합니다.
