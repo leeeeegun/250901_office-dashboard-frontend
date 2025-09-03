@@ -1,9 +1,21 @@
-🏢 오피스 대시보드 프론트엔드
-React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관리 대시보드 프론트엔드 프로젝트입니다. 이 대시보드는 사내 업무 효율성을 높이기 위한 다양한 기능들을 통합하여 제공합니다.
+<div align="center">
 
-🌟 주요 기능
-이 대시보드는 다음과 같은 다양한 페이지와 기능으로 구성되어 있습니다.
+🏢 오피스 대시보드 (Office Dashboard)
+React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관리 대시보드 프론트엔드 프로젝트
 
+</div>
+
+<p align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/React-61DAFB%3Fstyle%3Dfor-the-badge%26logo%3Dreact%26logoColor%3Dblack" alt="React"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Vite-646CFF%3Fstyle%3Dfor-the-badge%26logo%3Dvite%26logoColor%3Dwhite" alt="Vite"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Tailwind_CSS-38B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css%26logoColor%3Dwhite" alt="Tailwind CSS"/>
+</p>
+
+🖼️ 미리보기
+✨ 프로젝트 소개
+이 프로젝트는 사내 임직원들의 업무 효율성을 높이고 원활한 소통을 지원하기 위해 만들어진 통합 오피스 대시보드입니다. 출퇴근 관리부터 전자결재, 예약 시스템까지 다양한 기능을 하나의 플랫폼에서 관리할 수 있습니다.
+
+🚀 주요 기능
 📊 대시보드 (Dashboard): 로그인 후 가장 먼저 보게 될 메인 페이지로, 프로필 정보, 출퇴근 현황, 최신 게시글 등 주요 정보들을 한눈에 파악할 수 있습니다.
 
 ✍️ 전자결재 (ApprovalPage): 휴가 신청, 비용 처리 등 각종 결재 문서를 상신하고 처리 현황을 확인할 수 있습니다.
@@ -25,34 +37,31 @@ React와 Vite, Tailwind CSS를 사용하여 구축한 현대적인 오피스 관
 ✨ 오늘의 운세 (FortunePage): 재미로 보는 오늘의 운세 기능입니다.
 
 🛠️ 기술 스택
-프레임워크: React.js
+Frontend
+Framework: React.js
 
-빌드 도구: Vite
+State Management: React Hooks (useState, useEffect 등)
 
-스타일링: Tailwind CSS
+Routing: useState와 switch 문을 활용한 자체 라우팅 구현
 
-상태 관리: React Hooks (useState, useEffect 등)
+Styling
+CSS Framework: Tailwind CSS
 
-라우팅: React Router DOM (package.json 기반 추정)
+Build Tools
+Bundler: Vite
 
-🚀 시작하기
+🏁 시작하기
 1. 프로젝트 클론
 git clone [https://github.com/leeeeegun/office-dashboard-frontend.git](https://github.com/leeeeegun/office-dashboard-frontend.git)
 cd office-dashboard-frontend
 
 2. 의존성 설치
-프로젝트에 필요한 라이브러리들을 설치합니다.
-
 npm install
 
 3. 개발 서버 실행
-아래 명령어를 실행하면 개발 서버가 시작되고, 브라우저에서 실시간으로 변경 사항을 확인할 수 있습니다.
-
 npm run dev
 
-📂 폴더 구조
-프로젝트의 주요 폴더 구조는 다음과 같습니다.
-
+📁 폴더 구조
 office-dashboard-frontend/
 ├── public/               # 정적 파일 (이미지, 폰트 등)
 ├── src/
@@ -69,5 +78,3 @@ office-dashboard-frontend/
 ├── .gitignore
 ├── package.json
 └── README.md
-
-각 폴더는 기능과 역할에 따라 명확하게 분리되어 있어 유지보수가 용이하도록 구성되었습니다.
