@@ -42,6 +42,26 @@ HUB 오피스 대시보드는 사내 구성원들의 업무 효율성을 높이�
 -   Node.js (v16 이상)
 -   npm
 
+<br/>
+
+## 🏗️ 프로젝트 구조
+office-dashboard-frontend/
+├── src/
+│   ├── assets/           # 이미지, 폰트 등 정적 에셋
+│   ├── components/       # 공용 및 기능별 컴포넌트
+│   │   ├── common/       # 아이콘 등 공용 컴포넌트
+│   │   ├── dashboard/    # 대시보드 관련 컴포넌트
+│   │   └── layout/       # 헤더, 사이드바 등 레이아웃 컴포넌트
+│   ├── data/             # 목업 데이터
+│   ├── pages/            # 각 메뉴에 해당하는 페이지 컴포넌트
+│   ├── App.jsx           # 메인 애플리케이션 컴포넌트
+│   └── main.jsx          # 애플리케이션 진입점
+├── public/               # 정적 파일
+├── package.json
+└── vite.config.js
+
+<br/>
+
 ### Frontend 실행 방법
 
 ```bash
@@ -57,20 +77,3 @@ npm install
 # 4. 개발 서버를 실행합니다.
 npm run dev
 
-<br/>
-
-🏗️ 프로젝트 구조
-office-dashboard-frontend/
-├── src/
-│   ├── assets/           # 이미지, 폰트 등 정적 에셋
-│   ├── components/       # 공용 및 기능별 컴포넌트
-│   │   ├── common/       # 아이콘 등 공용 컴포넌트
-│   │   ├── dashboard/    # 대시보드 관련 컴포넌트
-│   │   └── layout/       # 헤더, 사이드바 등 레이아웃 컴포넌트
-│   ├── data/             # 목업 데이터
-│   ├── pages/            # 각 메뉴에 해당하는 페이지 컴포넌트
-│   ├── App.jsx           # 메인 애플리케이션 컴포넌트
-│   └── main.jsx          # 애플리케이션 진입점
-├── public/               # 정적 파일
-├── package.json
-└── vite.config.js
