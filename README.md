@@ -60,7 +60,8 @@ office-dashboard-frontend/
 ├── public/               # 정적 파일
 ├── package.json
 └── vite.config.js
-
+```
+```bash
 <br/>
 
 ### Frontend 실행 방법
