@@ -6,7 +6,8 @@ React와 Tailwind CSS를 사용하여 제작된 모던한 오피스 대시보드
 
 ## 💫 대시보드 미리보기
 
-![HUB Office Dashboard](https://i.imgur.com/gK6Z8dD.png)
+<img width="1300" height="748" alt="image" src="https://github.com/user-attachments/assets/f438fee1-ef2c-4302-ac66-51d3f8dd8949" />
+
 
 <br/>
 
