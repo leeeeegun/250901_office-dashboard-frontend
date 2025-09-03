@@ -61,7 +61,7 @@ office-dashboard-frontend/
 ├── package.json
 └── vite.config.js
 ```
-```bash
+
 <br/>
 
 ### Frontend 실행 방법
