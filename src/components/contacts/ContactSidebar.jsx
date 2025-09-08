@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactSidebar = ({ contact, selectedGroup, onSelectGroup }) => {
+const ContactSidebar = ({ contacts, selectedGroup, onSelectGroup }) => {
     const departments = [...new Set(contacts.map(c => c.department))];
 
     return (

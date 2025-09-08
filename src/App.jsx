@@ -1,7 +1,3 @@
-/*
-  - 파일 경로: src/App.jsx
-  - 역할: 우리 앱의 모든 조각을 조립하고, 페이지 이동을 총괄하는 최종 지휘자야.
-*/
 import React, { useState } from 'react';
 import AppHeader from './components/layout/AppHeader.jsx';
 import Sidebar from './components/layout/Sidebar.jsx';
