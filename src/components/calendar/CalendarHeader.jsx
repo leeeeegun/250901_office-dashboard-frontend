@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CalendarHeader = ({ currentDate, onPrevMonth, onToday }) => {
-    const monthYearFormat = new Intl.NumberFormat('ko-KR', { year: 'numeric', month: 'long'});
+const CalendarHeader = ({ currentDate, onPrevMonth, onNextMonth, onToday }) => {
+    const monthYearFormat = new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long' });
 
     return (
         <header className="p-4 border-b flex justify-between items-center flex-shrink-0">
@@ -18,3 +18,4 @@ const CalendarHeader = ({ currentDate, onPrevMonth, onToday }) => {
 };
 
 export default CalendarHeader;
+
