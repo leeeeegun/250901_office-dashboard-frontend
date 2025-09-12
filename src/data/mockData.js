@@ -135,3 +135,10 @@ export const contacts = [
         isFavorite: false,
     }
 ];
+
+export const calendarEvents = [
+    { id: 'event-1', date: '2025-09-10', title: '정기 시스템 점검' },
+    { id: 'event-2', date: '2025-09-15', title: '3분기 실적 보고 마감' },
+    { id: 'event-3', date: '2025-09-15', title: '기획팀 주간 회의' },
+    { id: 'event-4', date: '2025-09-29', title: '추석 연휴 (대체공휴일)' },
+];
