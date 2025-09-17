@@ -142,3 +142,18 @@ export const calendarEvents = [
     { id: 'event-3', date: '2025-09-15', title: '기획팀 주간 회의' },
     { id: 'event-4', date: '2025-09-29', title: '추석 연휴 (대체공휴일)' },
 ];
+
+
+// 예약 시스템을 위한 데이터
+  export const bookingResources = [
+      { id: 'room-a', name: '대회의실 A (20인)', capacity: 20 },
+      { id: 'room-b', name: '중회의실 B (10인)', capacity: 10 },
+      { id: 'room-c', name: '소회의실 C (6인)', capacity: 6 },
+      { id: 'focus-1', name: '집중 부스 1 (1인)', capacity: 1 },
+  ];
+
+  export const bookings = [
+      { id: 'booking-1', resourceId: 'room-a', user: '김개발', title: '전사 주간 기획 회의', start: '2025-09-18T10:00:00', end: '2025-09-18T11:30:00' },
+      { id: 'booking-2', resourceId: 'room-b', user: '이디자인', title: '신규 UI/UX 리뷰', start: '2025-09-18T14:00:00', end: '2025-09-18T15:30:00' },
+      { id: 'booking-3', resourceId: 'room-a', user: '박기획', title: '마케팅팀 TF 회의', start: '2025-09-18T16:00:00', end: '2025-09-18T17:00:00' },
+  ];
