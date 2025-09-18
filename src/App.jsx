@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppHeader from './components/layout/AppHeader.jsx';
 import Sidebar from './components/layout/Sidebar.jsx';
 import Dashboard from './components/dashboard/Dashboard.jsx';
+import Hubbie from './components/Hubbie.jsx';
 
 import MailPage from './pages/MailPage.jsx';
 import ContactsPage from './pages/ContactsPage.jsx';
@@ -16,6 +17,20 @@ import FortunePage from './pages/FortunePage.jsx';
 export default function App() {
 
     const [activePage, setActivePage] = useState('dashboard');
+    const [showHubbieCelebration, setShowHubbieCelebration] = useState(false);
+    const [workStatus, setWorkStatus] = useState(() => localStorage.getItem('workStatus') || '업무중');
+
+    useEffect(() => {
+        localStorage.setItem('workStatus', workStatus);
+    }, [workStatus]);
+
+
+    const handleTaskComplete = () => {
+        setShowHubbieCelebration(true);
+        setTimeout(() => {
+            setShowHubbieCelebration(false);
+        }, 2000);
+    };
 
     const renderContent = () => {
         switch (activePage) {
@@ -28,9 +43,12 @@ export default function App() {
             case 'approval': return <ApprovalPage />;
             case 'lunch': return <LunchPage />;
             case 'fortune': return <FortunePage />;
-
             default:
-                return <Dashboard />;
+                return <Dashboard
+                    onTaskComplete={handleTaskComplete}
+                    workStatus={workStatus}
+                    setWorkStatus={setWorkStatus}
+                />;
         }
     };
 
@@ -46,6 +64,7 @@ export default function App() {
                 />
                 {renderContent()}
             </div>
+            <Hubbie showCelebration={showHubbieCelebration} />
         </div>
     );
 }

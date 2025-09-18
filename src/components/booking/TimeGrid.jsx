@@ -12,7 +12,7 @@ const TimeGrid = ({ bookings, onSelectTime }) => {
     const getBookingForSlot = (time) => {
         return bookings.find(booking => {
             const bookingStart = new Date(booking.start).toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit' });
-            const bookingEnd = new Date(booking.end).toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit '});
+            const bookingEnd = new Date(booking.end).toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit'});
             return time >= bookingStart && time < bookingEnd;
         });
     };

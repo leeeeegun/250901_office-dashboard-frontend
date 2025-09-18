@@ -34,7 +34,7 @@ const AttendanceCard = ({ workStatus, setWorkStatus }) => {
 
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
-    }, []);
+    }, [setWorkStatus]);
 
     const handleAction = (type) => {
         const message = type === 'checkIn' ? '지금 출근하시겠습니까?' : '지금 퇴근하시겠습니까?';
