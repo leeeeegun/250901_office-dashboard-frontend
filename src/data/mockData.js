@@ -1,3 +1,5 @@
+
+// 사용자 정보
 export const userInfo = {
     name: "이의건",
     team: "개발팀",
@@ -5,6 +7,8 @@ export const userInfo = {
     todayMailCount: 13,
     todayScheduleCount: 4,
 };
+
+// 게시판 정보
 export const boardItems = [
     {
         id: 1,
@@ -44,6 +48,7 @@ export const boardItems = [
     }
 ];
 
+// 받은 메일 정보
 export const emails = [
     {
         id: 'email-1',
@@ -78,6 +83,7 @@ export const emails = [
     },
 ];
 
+// 주소록
 export const contacts = [
     {
         id: 'contact-1',
@@ -136,6 +142,7 @@ export const contacts = [
     }
 ];
 
+// 캘린더
 export const calendarEvents = [
     { id: 'event-1', date: '2025-09-10', title: '정기 시스템 점검' },
     { id: 'event-2', date: '2025-09-15', title: '3분기 실적 보고 마감' },
@@ -157,3 +164,32 @@ export const calendarEvents = [
       { id: 'booking-2', resourceId: 'room-b', user: '이디자인', title: '신규 UI/UX 리뷰', start: '2025-09-18T14:00:00', end: '2025-09-18T15:30:00' },
       { id: 'booking-3', resourceId: 'room-a', user: '박기획', title: '마케팅팀 TF 회의', start: '2025-09-18T16:00:00', end: '2025-09-18T17:00:00' },
   ];
+
+  // 설문 기능 데이터
+export const surveys = [
+    {
+        id: 'survey-1',
+        title: '2025년 하반기 워크샵 장소 선호도 조사',
+        author: '인사팀',
+        status: 'ongoing',
+        myVote: null,
+        options: [
+            {id: 'opt-1-1', text: '제주도', votes: 15},
+            {id: 'opt-1-2', text: '강원도', votes: 22},
+            {id: 'opt-1-3', text: '부산', votes: 8},
+            {id: 'opt-1-4', text: '해외 (동남아)', votes: 11},
+        ]
+    },
+    {
+        id: 'survey-2',
+        title: '사내 카페 신규 메뉴 도입 관련 설문',
+        author: '총무팀',
+        status: 'completed',
+        myVote: 'opt-2-2',
+        options: [
+            {id: 'opt-2-1', text: '시즌 과일 주스', votes: 31},
+            {id: 'opt-2-2', text: '디카페인 콜드브루', votes: 25},
+            {id: 'opt-2-3', text: '각종 허브티', votes: 18},
+        ]
+    }
+];
