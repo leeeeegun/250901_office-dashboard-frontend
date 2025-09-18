@@ -22,7 +22,6 @@ const BookingPage = () => {
         localStorage.setItem('bookings', JSON.stringify(bookings));
     }, [bookings]);
 
-    // 이전/다음 날짜로 이동
     const handleDateChange = (days) => {
         setCurrentDate(prev => {
             const newDate = new Date(prev);
@@ -39,7 +38,7 @@ const BookingPage = () => {
         const newBooking = {
             id: `booking-${Date.now()}`,
             resourceId: selectedResourceId,
-            user: '나', // 실제 앱에서는 로그인한 사용자 정보로 바꿔야 해.
+            user: '나',
             title,
             start: `${modalInfo.date}T${startTime}:00`,
             end: `${modalInfo.date}T${endTime}:00`,
@@ -68,11 +67,9 @@ const BookingPage = () => {
                         <button onClick={() => setCurrentDate(new Date())} className="ml-4 px-4 py-2 text-sm border rounded-lg">오늘</button>
                     </div>
                 </header>
-                {/* 시간대별 예약 현황을 보여주는 타임 그리드 */}
                 <TimeGrid bookings={todaysBookings} onSelectTime={handleOpenModal} />
             </div>
 
-            {/* modalInfo.isOpen이 true일 때만 '새 예약' 팝업창 */}
             {modalInfo.isOpen && (
                 <BookingModal
                     date={modalInfo.date}
@@ -86,4 +83,5 @@ const BookingPage = () => {
 };
 
 export default BookingPage;
+
 
