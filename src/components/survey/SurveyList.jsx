@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SurveyList = ({surveys, onSelectSurvey, onShowCreateModal}) => {
+const SurveyList = ({ surveys, onSelectSurvey, onShowCreateModal }) => {
     return (
         <div className="p-6">
             <header className="flex justify-between items-center mb-6">
@@ -36,7 +36,7 @@ const SurveyList = ({surveys, onSelectSurvey, onShowCreateModal}) => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SurveyList;

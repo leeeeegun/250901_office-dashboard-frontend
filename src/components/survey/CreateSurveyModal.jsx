@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 
 const CreateSurveyModal = ({ onClose, onSave }) => {
-    const [title, setTitle] = useState("");
-    const [options, setOptions] = useState(["", ""]); // 기타 답변 항목 2개
+    const [title, setTitle] = useState('');
+    const [options, setOptions] = useState(['', '']); // 기본 답변 항목 2개
 
-    const handleOptionChange = (indexedDB,  value) => {
+    const handleOptionChange = (index, value) => {
         const newOptions = [...options];
         newOptions[index] = value;
         setOptions(newOptions);
@@ -18,7 +18,7 @@ const CreateSurveyModal = ({ onClose, onSave }) => {
             alert('설문 제목과 모든 답변 항목을 입력해주세요.');
             return;
         }
-        onSave({title, options});
+        onSave({ title, options });
         onClose();
     };
 
