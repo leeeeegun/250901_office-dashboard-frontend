@@ -4,11 +4,9 @@ import BoardCard from './BoardCard.jsx';
 import ProfileCard from './ProfileCard.jsx';
 import TodoList from './TodoList.jsx';
 
-const Dashboard = () => {
-    // 전사탭과 내탭 구분
+const Dashboard = ({ workStatus, setWorkStatus, onTaskComplete }) => {
+    // 전사 탭과 내 탭 중 어떤 게 선택됐는지 기억하는 저장 공간
     const [activeTab, setActiveTab] = useState('company');
-    // 근무 상태를 해당 컴포넌트에서 관리
-    const [workStatus, setWorkStatus] = useState('업무중');
 
     return (
         <main className="flex-1 p-6 bg-gray-100 overflow-y-auto">
@@ -30,7 +28,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* 전사 탭 활성화 */}
+            {/* 전사 탭이 활성화됐을 때 보여줄 내용 */}
             {activeTab === 'company' ? (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 space-y-6">
@@ -41,14 +39,13 @@ const Dashboard = () => {
                         <ProfileCard workStatus={workStatus} />
                     </div>
                 </div>
-            ):(
+            ) : (
                 <div>
-                    <TodoList />
+                    <TodoList onTaskComplete={onTaskComplete} />
                 </div>
-
             )}
         </main>
-    )
+    );
 };
 
 export default Dashboard;
