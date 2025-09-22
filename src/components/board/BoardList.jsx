@@ -5,7 +5,7 @@ const BoardList = ({ posts, onSelectPost, onShowWrite }) => {
         <div className="p-6">
             <header className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold">게시판</h1>
-                <hutton
+                <button
                     onClick={onShowWrite}
                     className="px-4 py-2 rounded-lg bg-cyan-500 text-white font-semibold hover:bg-cyan-600"
                 >
@@ -24,7 +24,7 @@ const BoardList = ({ posts, onSelectPost, onShowWrite }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {posts.map((post,index) => (
+                        {posts.map((post, index) => (
                             <tr
                                 key={post.id}
                                 onClick={() => onSelectPost(post.id)}
@@ -36,7 +36,7 @@ const BoardList = ({ posts, onSelectPost, onShowWrite }) => {
                                 <td className="p-3 text-gray-500">{post.date}</td>
                                 <td className="p-3 text-center text-gray-500">{post.views}</td>
                             </tr>
-                        )}
+                        ))}
                     </tbody>
                 </table>
             </div>
