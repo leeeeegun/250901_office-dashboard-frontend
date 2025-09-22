@@ -192,4 +192,28 @@ export const surveys = [
             {id: 'opt-2-3', text: '각종 허브티', votes: 18},
         ]
     }
+    //게시글
+    export const boardItems = [
+        {
+            id: 1,
+            category: "공지사항",
+            title: "HUB 오피스 9월 정기 업데이트",
+            author: "김철수 부장",
+            date: "2025-09-03 10:39",
+            group: "HUB 오피스",
+            thumbnailUrl: "https://placehold.co/240x160/e0f2fe/0891b2?text=Notice",
+            views: 128, // 조회수 추가!
+            content: "안녕하세요, HUB 오피스팀입니다.\n\n9월 정기 업데이트가 완료되었습니다.\n이번 업데이트에서는 다음과 같은 기능이 개선되었습니다.\n\n- 캘린더 일정 공유 기능 추가\n- 메일 검색 속도 향상\n- 기타 버그 수정\n\n자세한 내용은 공지사항을 참고해주세요." // 본문 추가!
+        },
+        {
+            id: 3,
+            category: "설문조사",
+            title: "2025년 하반기 워크샵 장소 선호도 조사",
+            author: "박민지 대리",
+            date: "2025-09-02 14:00",
+            group: "인사팀",
+            thumbnailUrl: "https://placehold.co/240x160/fef08a/854d0e?text=Survey",
+            views: 256, // 조회수 추가!
+            content: "인사팀에서 2025년 하반기 워크샵 장소 선정을 위한 설문조사를 진행합니다.\n\n임직원 여러분의 많은 참여 부탁드립니다." // 본문 추가!
+        },
 ];
