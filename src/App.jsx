@@ -40,9 +40,10 @@ export default function App() {
             case 'booking': return <BookingPage />;
             case 'survey': return <SurveyPage />;
             case 'board': return <BoardPage />;
-//             case 'approval': return <ApprovalPage />;
-                                                      //             case 'lunch': return <LunchPage />;
-                                                      //             case 'fortune': return <FortunePage />;
+            case 'approval': return <ApprovalPage />;
+            case 'lunch': return <LunchPage />;
+            case 'fortune': return <FortunePage />;
+
             default:
                 return <Dashboard
                     onTaskComplete={handleTaskComplete}
