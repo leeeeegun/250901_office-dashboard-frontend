@@ -204,3 +204,45 @@ export const surveys = [
     }
 ];
 
+
+export const approvals = [
+    {
+        id: 'approval-1',
+        title: '2025년 하반기 워크샵 경비 지출 결의',
+        author: '박기획',
+        date: '2025-09-22',
+        status: 'pending', // 내가 결재할 차례
+        content: '2025년 하반기 워크샵 진행을 위한 경비 지출 결의를 요청합니다.\n\n- 예상 비용: 3,000,000원\n- 상세 내역: 첨부파일 참조',
+        approvalLine: [
+            { approverId: 'contact-3', approverName: '박기획', status: 'approved', comment: '기안' },
+            { approverId: 'me', approverName: '나', status: 'current', comment: '' }, // 'me'는 현재 로그인한 나
+            { approverId: 'contact-1', approverName: '김개발', status: 'pending', comment: '' },
+        ]
+    },
+    {
+        id: 'approval-2',
+        title: '신규 개발 서버 구매 요청',
+        author: '나',
+        date: '2025-09-20',
+        status: 'in-progress', // 진행중
+        content: '신규 프로젝트를 위한 개발 서버 2대 구매를 요청합니다.',
+        approvalLine: [
+            { approverId: 'me', approverName: '나', status: 'approved', comment: '기안' },
+            { approverId: 'contact-1', approverName: '김개발', status: 'current', comment: '' },
+            { approverId: 'contact-4', approverName: '최총무', status: 'pending', comment: '' },
+        ]
+    },
+     {
+        id: 'approval-3',
+        title: '법인카드 사용 내역 보고',
+        author: '최총무',
+        date: '2025-09-19',
+        status: 'completed', // 완료됨
+        content: '8월 법인카드 사용 내역 보고서입니다.',
+        approvalLine: [
+            { approverId: 'contact-4', approverName: '최총무', status: 'approved', comment: '기안' },
+            { approverId: 'me', approverName: '나', status: 'approved', comment: '확인' },
+        ]
+    },
+];
+
