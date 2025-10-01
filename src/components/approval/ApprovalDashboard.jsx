@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApprovalDashboard = ({ counts, onSelectCategory }) => {
+const ApprovalDashboard = ({ counts, onSelectCategory, onShowWrite }) => {
     const categories = [
         { key: 'pending', title: '결재 대기 문서', description: '내가 결재해야 할 문서입니다.', count: counts.pending },
         { key: 'in-progress', title: '결재 진행 문서', description: '내가 올린 문서 중 진행중인 문서입니다.', count: counts.inProgress },
@@ -9,7 +9,15 @@ const ApprovalDashboard = ({ counts, onSelectCategory }) => {
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl font-bold mb-6">전자결재 홈</h1>
+            <header className="flex justify-between items-center mb-6">
+                <h1 className="text-2xl font-bold">전자결재 홈</h1>
+                <button
+                    onClick={onShowWrite}
+                    className="px-4 py-2 rounded-lg bg-cyan-500 text-white font-semibold hover:bg-cyan-500"
+                >
+                    새 기안 작성
+                </button>
+            </header>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {categories.map(cat => (
                     <div
@@ -19,7 +27,7 @@ const ApprovalDashboard = ({ counts, onSelectCategory }) => {
                     >
                         <h2 className="font-bold text-lg">{cat.title}</h2>
                         <p className="text-sm text-gray-500 mt-1">{cat.description}</p>
-                        <p className="text-4xl font-bold text-right mt-4 text-cyan-600">{cat.count}</p>
+                        <p className="text-4xl font-bold text-right text-cyan-600">{cat.count}</p>
                     </div>
                 ))}
             </div>
