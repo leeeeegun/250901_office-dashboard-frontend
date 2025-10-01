@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { approvals as initialApprovals } from '../data/mockData.js';
+import { approvals as initialApprovals, userInfo } from '../data/mockData.js';
 import ApprovalDashboard from '../components/approval/ApprovalDashboard.jsx';
 import ApprovalView from '../components/approval/ApprovalView.jsx';
 import ApprovalWrite from '../components/approval/ApprovalWrite.jsx';
@@ -25,7 +25,6 @@ const ApprovalList = ({ title, documents, onSelect, onBack }) => (
 
 
 const ApprovalPage = () => {
-    // 모든 결재 문서 저장 및 관리
     const [approvals, setApprovals] = useState([]);
     const [view, setView] = useState({ mode: 'dashboard' });
 
@@ -34,48 +33,80 @@ const ApprovalPage = () => {
         setApprovals(saved || initialApprovals);
     }, []);
 
-    // 결재 목록이 바뀔 때마다, 브라우저 저장소에 자동으로 덮어쓰기
     useEffect(() => {
         localStorage.setItem('approvals', JSON.stringify(approvals));
     }, [approvals]);
 
-    // 결재 승인 로직
+    // 결재 승인 로직 (수정됨)
     const handleApprove = (docId) => {
-        setApprovals(approvals.map(doc => {
-            if (doc.id !== docId) return doc;
+        setApprovals(prevApprovals => {
+            const newApprovals = [...prevApprovals];
+            const docIndex = newApprovals.findIndex(d => d.id === docId);
+            if (docIndex === -1) return prevApprovals;
 
-            let isCompleted = true;
-            let nextApproverFound = false;
-            const newApprovalLine = doc.approvalLine.map(approver => {
-                if (approver.status === 'current' && approver.approverId === 'me') {
-                    nextApproverFound = true;
-                    return { ...approver, status: 'approved', comment: '승인' };
-                }
-                if (nextApproverFound && approver.status === 'pending') {
-                    isCompleted = false;
-                    nextApproverFound = false;
-                    return { ...approver, status: 'current' };
-                }
-                return approver;
-            });
+            const doc = { ...newApprovals[docIndex] };
+            const approvalLine = [...doc.approvalLine];
 
-            return { ...doc, approvalLine: newApprovalLine, status: isCompleted ? 'completed' : 'in-progress' };
-        }));
-        setView({ mode: 'dashboard' }); // 처리 후 홈으로
+            const currentApproverIndex = approvalLine.findIndex(
+                a => a.status === 'current' && a.approverId === 'me'
+            );
+
+            if (currentApproverIndex === -1) return prevApprovals;
+
+            approvalLine[currentApproverIndex] = {
+                ...approvalLine[currentApproverIndex],
+                status: 'approved',
+                comment: '승인'
+            };
+
+            const nextApproverIndex = currentApproverIndex + 1;
+            if (nextApproverIndex < approvalLine.length) {
+                approvalLine[nextApproverIndex] = {
+                    ...approvalLine[nextApproverIndex],
+                    status: 'current'
+                };
+                doc.status = 'in-progress';
+            } else {
+                doc.status = 'completed';
+            }
+
+            doc.approvalLine = approvalLine;
+            newApprovals[docIndex] = doc;
+
+            return newApprovals;
+        });
+        setView({ mode: 'dashboard' });
     };
 
-    // 결재 반려 로직
+    // 결재 반려 로직 (수정됨)
     const handleReject = (docId, reason) => {
-        setApprovals(approvals.map(doc => {
-            if (doc.id !== docId) return doc;
-            const newApprovalLine = doc.approvalLine.map(approver =>
-                (approver.status === 'current' && approver.approverId === 'me')
-                    ? { ...approver, status: 'rejected', comment: reason }
-                    : approver
+        setApprovals(prevApprovals => {
+            const newApprovals = [...prevApprovals];
+            const docIndex = newApprovals.findIndex(d => d.id === docId);
+            if (docIndex === -1) return prevApprovals;
+
+            const doc = { ...newApprovals[docIndex] };
+            const approvalLine = [...doc.approvalLine];
+
+            const currentApproverIndex = approvalLine.findIndex(
+                a => a.status === 'current' && a.approverId === 'me'
             );
-            return { ...doc, approvalLine: newApprovalLine, status: 'rejected' };
-        }));
-        setView({ mode: 'dashboard' }); // 처리 후 홈으로
+
+            if (currentApproverIndex === -1) return prevApprovals;
+
+            approvalLine[currentApproverIndex] = {
+                ...approvalLine[currentApproverIndex],
+                status: 'rejected',
+                comment: reason
+            };
+
+            doc.approvalLine = approvalLine;
+            doc.status = 'rejected';
+            newApprovals[docIndex] = doc;
+
+            return newApprovals;
+        });
+        setView({ mode: 'dashboard' });
     };
 
     // 새 기안 저장 로직
@@ -84,7 +115,7 @@ const ApprovalPage = () => {
             id: `approval-${Date.now()}`,
             title,
             content,
-            author: '나',
+            author: userInfo.name, // 내 이름으로 기안
             date: new Date().toISOString().split('T')[0],
             status: 'in-progress',
             approvalLine: [
@@ -97,12 +128,12 @@ const ApprovalPage = () => {
             ]
         };
         setApprovals([newApproval, ...approvals]);
-        setView({ mode: 'dashboard' }); // 저장 후 홈으로
+        setView({ mode: 'dashboard' }); // 저장 후 홈으로 돌아가기
     };
 
     const counts = useMemo(() => ({
         pending: approvals.filter(a => a.approvalLine.some(l => l.status === 'current' && l.approverId === 'me')).length,
-        inProgress: approvals.filter(a => a.author === '나' && a.status === 'in-progress').length,
+        inProgress: approvals.filter(a => a.author === userInfo.name && a.status === 'in-progress').length,
         completed: approvals.filter(a => a.status === 'completed' || a.status === 'rejected').length,
     }), [approvals]);
 
@@ -112,23 +143,27 @@ const ApprovalPage = () => {
                 const docToView = approvals.find(a => a.id === view.docId);
                 return <ApprovalView document={docToView} onApprove={handleApprove} onReject={handleReject} onBack={() => setView({ mode: 'list', category: view.prevCategory })} />;
             case 'write': // 글쓰기 모드
-                 return <ApprovalWrite onSave={handleSave} onCancel={() => setView({ mode: 'dashboard' })} />;
+                return <ApprovalWrite onSave={handleSave} onCancel={() => setView({ mode: 'dashboard' })} />;
             case 'list': // 목록 보기 모드
-                 let documents = [];
-                 let listTitle = "";
-                 if(view.category === 'pending') {
+                let documents = [];
+                let listTitle = "";
+                if(view.category === 'pending') {
                     documents = approvals.filter(a => a.approvalLine.some(l => l.status === 'current' && l.approverId === 'me'));
                     listTitle = "결재 대기 문서";
-                 } else if (view.category === 'in-progress') {
-                    documents = approvals.filter(a => a.author === '나' && a.status === 'in-progress');
+                } else if (view.category === 'in-progress') {
+                    documents = approvals.filter(a => a.author === userInfo.name && a.status === 'in-progress');
                     listTitle = "결재 진행 문서";
-                 } else if (view.category === 'completed') {
+                } else if (view.category === 'completed') {
                     documents = approvals.filter(a => a.status === 'completed' || a.status === 'rejected');
                     listTitle = "완료 문서";
-                 }
-                 return <ApprovalList title={listTitle} documents={documents} onSelect={(docId) => setView({ mode: 'view', docId, prevCategory: view.category })} onBack={() => setView({ mode: 'dashboard' })}/>
+                }
+                return <ApprovalList title={listTitle} documents={documents} onSelect={(docId) => setView({ mode: 'view', docId, prevCategory: view.category })} onBack={() => setView({ mode: 'dashboard' })}/>;
             default: // 기본값은 결재 홈
-                return <ApprovalDashboard counts={counts} onSelectCategory={(category) => setView({ mode: 'list', category })} />;
+                return <ApprovalDashboard
+                    counts={counts}
+                    onSelectCategory={(category) => setView({ mode: 'list', category })}
+                    onShowWrite={() => setView({ mode: 'write' })}
+                />;
         }
     };
 

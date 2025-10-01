@@ -4,6 +4,10 @@ const ApprovalView = ({ document, onApprove, onReject, onBack }) => {
     const [rejectionReason, setRejectionReason] = useState('');
     const [showRejectModal, setShowRejectModal] = useState(false);
 
+    if (!document) {
+        return <div className="p-6">문서를 찾을 수 없거나 불러오는 중입니다...</div>;
+    }
+
     const handleReject = () => {
         if (!rejectionReason.trim()) {
             alert('반려 사유를 입력해주세요.');
